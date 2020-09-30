@@ -1,0 +1,922 @@
+/*--styling affects all elements in the body tag--*/
+*{
+    box-sizing: border-box;
+    font-family: arial;
+    margin: 0em;
+}
+
+
+/*--start styling grid 1st page--*/
+/*standard pcscreen 768px*/
+@media screen and (min-width: 1180px){
+.grid{
+    background-color: #FFFFFF;
+    display: grid;
+    grid-column-gap: 50px;
+    grid-gap: 5px;
+    grid-row-gap: 10px;
+/*12 columns to fit screen-size larger than 900px*/    grid-template-areas:
+      "navigation navigation navigation navigation navigation navigation navigation navigation navigation navigation navigation navigation"
+      "quote quote quote quote quote quote slideshow slideshow slideshow slideshow slideshow slideshow"
+      "footer footer footer footer footer footer footer footer footer footer footer footer";
+    height: 100%;
+    max-width: 5120px;
+/*for at kolonnene skal ha lik vidde*/grid-template-columns: repeat(12,1fr);
+    width: 100%;
+}
+}
+
+/*placement of each container*/
+.container1{
+    grid-area: navigation;
+}
+.container2{
+    grid-area: quote;
+}
+.container3{
+    grid-area: slideshow;
+}
+.container4{
+    grid-area: footer;
+}
+
+/*containers in the grid*/
+.grid > .container1{
+    background-color: #FFFFFF;
+}
+.grid > .container2{
+    background-color: #FFFFFF;
+    grid-template-columns: 50%;
+    grid-template-rows: 100%;
+    padding: 1.313em;
+    text-align: center;
+}
+.grid > .container3{
+    background-color: #FFFFFF;
+    grid-template-columns: 50%;
+    grid-template-rows: 100%;
+    padding: 1.313em;
+    height: 100%;
+}
+.grid > .container4{
+    text-align: center;
+}
+/*--end styling grid--*/
+
+
+
+/*--start styling navigation bar--*/
+/*visible keyboard focus indicator for navigation bar*/
+.navigation :focus{    
+  outline: 0.313em solid #FFFFFF;
+  outline-offset: -0.313em;    
+}
+
+/*removing the list items' bulletpoints, margin, padding and hiding overflow content of a block-level element on the left and right side. Styling background color and borders.*/
+ul.navigation{
+    background-color: #000000;
+    border-color: #000000;
+    border-bottom: 1em solid;
+    font-family: arial;
+    list-style-type: none;
+    margin: 0em;
+    overflow: hidden;  
+    padding: 0em;
+}
+
+/*placement of list item one to four*/
+ul.navigation li{
+    float: left;
+    /*display: inline-block;*/
+}
+
+/*placement of list item five*/
+ul.navigation li.right{
+    float: right;
+}
+
+/*placing list items in boxes and styling*/
+ul.navigation li a{
+    color: #FFFFFF;
+    display: block;
+    font-size: 2.300em;
+    padding: 0.563em 0.550em;
+    text-align: center;
+    text-decoration: none;
+}
+
+/*change of background color when hovered over*/
+ul.navigation li a:hover:not(.active){
+    background-color: #FFFFFF;
+    color: #000000;
+}
+
+/*set background color on the active list item*/
+ul.navigation li a.active{
+    background-color: #0000E6;
+}
+
+/*responsive navigation. Maximum width set according to standard HD desktop*/
+/*iMac 5120px*/
+@media screen and (max-width: 1256px){
+  ul.navigation li.right, 
+  ul.navigation li {float: none;}
+}
+/*--end styling navigation bar--*/
+
+
+
+/*--start accessabiliy navigation--*/
+/*list item five and six*/
+.language{
+    border-radius: 85%;
+    display: inline-block;
+    text-align: right;
+} 
+
+/*change of background color for list item seven to nine when hovered over*/
+a#grey:hover{
+    background-color: #595959;
+}
+
+/*visible keyboard focus indicator for information about us*/
+.about :focus{    
+  outline: 0.313em solid #FFFFFF;
+  outline-offset: -0.313em;    
+}
+
+a#darkgrey:hover{
+    background-color: #595959;
+}
+
+div#darkgrey:hover{
+    background-color: #595959;
+}
+
+div#crispWhite:hover{
+    background-color: #FFFFFF; 
+}
+
+/*list item seven
+.imgContrast{
+    display: inline-block;
+    text-align: right;
+}*/
+
+/*list item eight*/
+.largeFontSize{
+    display: inline-block;
+    text-align: right;  
+}
+
+/*list item nine*/
+.defaultFontSize{
+    display: inline-block;
+    text-align: right;
+}
+/*--end accessibility navigation--*/
+
+
+
+/*--start quote--*/
+div.quote{
+    background-color: #0000E6;
+    color: #FFFFFF;
+    font-size: 2.000em;
+    font-style: italic;
+    padding: 4.688em 0.313em;
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    bottom; 0;
+}
+/*--end quote--*/
+
+
+
+/*start slideshow*/
+/*--visible keyboard focus indicator for slideshow--*/
+/*focus tabindex*/
+.slideshow :focus{    
+  outline: 0.313em solid #FF5542;
+  outline-offset: -0.313em;    
+}
+
+/*change of background color for list item thirtheen when hovered over*/
+a#poop:hover{
+    background-color: #9B6D1C;
+}
+
+.slideshow{
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.slide{
+    font-family: Arial;
+    font-size: 2.000em;
+    position: relative;
+    vertical-align: cover;
+}
+
+.slideshow .slide{
+    font-size: 1.000em;
+    height: 100%;
+    transition:  1.0s;
+    white-space: nowrap;
+}
+
+.slideshow .slide > *{
+    background: #FFFFFF 50% no-repeat;
+    background-size: cover;
+    display: inline-block;
+    height: 100%;
+    position: relative;
+    text-align: center;
+    vertical-align: middle;
+    width: 100%;
+}
+
+.slideshow .number{
+    bottom: 0;
+    display: block;
+    font-size: 1.2em;
+    margin-bottom: 1.2em;
+    position: absolute;
+    text-align: center;
+    text-decoration: none;
+    width: 100%;
+}
+
+.slideshow .number > a{
+    background-color: #000000;
+    border-radius: 50%;
+    color: #FFFFFF;
+    display: inline-block;
+    height: 1.8em;
+    line-height: 1.8em;
+    margin-left: 0.2em;
+    margin-right: 0.2em;
+    text-align: center;
+    text-decoration: none;
+    width: 2em;
+}
+
+.slideshow .number > a:hover{
+    border: 0.085em solid #000000;
+    color: #FFFFFF;
+}
+
+/*displays which picture is active, and which pictures are inactive.*/
+.slideshow >s:target ~ .number >*{
+    background: #FFFFFF;
+    color: #000000;
+}
+#picture1:target ~ .number >*:nth-child(1){
+    background: #0000E6;
+    color: #FFFFFF;
+}
+#picture2:target ~ .number>*:nth-child(2){
+    background: #0000E6;
+    color: #FFFFFF;
+}
+#picture3:target ~ .number >*:nth-child(3){
+    background: #0000E6;
+    color: #FFFFFF;
+}
+
+/*switching pictures*/
+#picture1: target ~ .slide{
+    transform: translateX(0%); -webkit-transform: translateX(0%);
+}
+#picture2:target ~ .slide{
+    transform: translateX(-100%); -webkit-transform: translateX(-100%);
+}
+#picture3:target ~ .slide{
+    transform: translateX(-200%); -webkit-transform: translateX(-200%);
+}
+/*--end slideshow--*/
+
+
+
+/*--start footer--*/
+/*visible keyboard focus indicator for social medias*/
+.media :focus{    
+  outline: 0.313em solid #FFFFFF;   
+}
+
+/*visible keyboard focus indicator for how to contact us*/
+.contact :focus{    
+  outline: 0.313em solid #FFFFFF;
+}
+
+footer{
+    background-color: #000000;
+    bottom: 0em;
+    height: 19em; 
+    margin: auto;
+    width: 100%;      
+}
+
+.wrapper{
+    width: 100%;   
+}
+
+h4{
+    color: #FFFFFF;
+    font-family: arial;
+    font-size: 2em; 
+    text-align: center;
+}
+
+
+/*div 1*/
+.media{
+    display: inline-block;
+    float: left; 
+    position: relative;
+    padding: 2em 0em 0em 0em;
+    width: 33.3%;
+}
+     
+.media ul{
+    list-style: none;
+    padding: 1em 0em 0em 0em; 
+    text-align: left; 
+    text-align: center;
+}
+
+.media ul li{
+    display: inline-block;
+    padding: 0.35em 0.5em 0.35em 0.5em;
+    text-decoration: none;
+}
+
+.imgFacebook{   
+    height: 2.3em;
+    width: 2.3em;   
+}
+
+.imgTwitter{
+    height: 2.5em;
+    width: 2.5em; 
+}
+
+.imgInstagram{
+    height: 2.5em;
+    width: 2.5em;
+}
+
+
+/*div 2*/
+.contact{
+    display: inline-block;
+    float: left; 
+    padding: 2em 0em 2em 0em;
+    position: relative;
+    width: 33.3%;    
+}
+
+.containerEmail{
+    padding: 0.1em 0 0.75em 0;
+}
+
+.containerPhone{
+    padding: 0.1em 0 0.75em 0;
+}
+
+.contact ul{
+    padding: 1em 0em 0em 0em;
+    text-align: center;
+}
+
+.contact ul li{
+    display: inline-block;
+    padding: 0em 0.5em 0em 0.5em;
+    text-decoration: none;
+    text-align: center;
+    position: relative;
+}
+
+.contact ul li a{   
+    padding: 1.7em 0.2em 1.7em 0.2em;      
+}
+
+.contact ul li p{
+    color: #FFFFFF;
+    font-family: arial; 
+    font-size: 1em;      
+}
+
+.imgEmail{
+    height: 2.5em;
+    width: 2.5em;  
+}
+
+.imgPhone{
+    height: 2.5em;
+    width: 2.5em;
+}
+
+
+/*div 3*/
+.about{
+    display: inline-block;
+    float: right; 
+    padding: 2em 0em 0em 0em;
+    position: relative;
+    width: 33.3%;
+}
+
+.about ul{
+    list-style: none;
+    padding: 1em 0em 0em 0em;
+}
+
+.about ul li{
+    display: block; 
+    padding: 0em 0em 0.75em 0em; 
+    text-decoration: none; 
+    text-align: center;   
+}
+
+.about ul li a{
+    color: #FFFFFF; 
+    font-family: arial; 
+    font-size: 1.2em; 
+    padding: 0.5em 0.5em 0.5em 0.5em; 
+    text-decoration: none; 
+}
+
+.about ul li p{
+    font-family: arial; 
+    font-size: 0.8em; 
+    color: #FFFFFF; 
+    padding: 2em 0em 0em 0em;
+}  
+
+/*set background color on the active list item*/
+div.about li a.active{
+    background-color: #9B6D1C;
+}
+/*--end footer--*/
+
+
+
+/*--start styling grid "problem" page--*/
+/*standard pcscreen 768px*/
+@media screen and (min-width: 1180px){
+.grid2{
+    background-color: #FFFFFF;
+    display: grid;
+    grid-column-gap: 3.125em;
+    grid-gap: 0.313em;
+    grid-row-gap: 0.625em;
+/*12 columns to fit screen-size larger than 900px*/    grid-template-areas:
+      "navigation navigation navigation navigation navigation navigation navigation navigation navigation navigation navigation navigation"
+      "quote quote quote quote quote quote quote quote quote quote quote quote"
+        "text text text text text text text text text text text text"
+      "footer footer footer footer footer footer footer footer footer footer footer footer";
+    height: 100%;
+    max-width: 5120px;
+    grid-template-columns: repeat(12,1fr);
+    width: 100%;
+}
+}
+
+/*placement of each container*/
+.container5{
+    grid-area: navigation;
+}
+.container6{
+    grid-area: quote;
+}
+.container7{
+    grid-area: text;
+}
+.container8{
+    grid-area: footer;
+}
+
+/*containers in the grid*/
+.grid2 > .container5{
+    background-color: #FFFFFF;
+}
+.grid2 > .container6{
+    background-color: #FFFFFF;
+    grid-template-columns: 50%;
+    grid-template-rows: 100%;
+    padding: 1.313em;
+    text-align: left;
+}
+.grid2 > .container7{
+    background-color: #FFFFFF;
+    grid-template-columns: 100%;
+    padding: 1.313em 5em;
+}
+.grid2 > .container8{
+    text-align: center;
+}
+/*--end styling grid "problem" page--*/
+
+
+
+/*--start styling grid "solution" page--*/
+/*standard pcscreen 768px*/
+@media screen and (min-width: 1180px){
+.grid3{
+    background-color: #FFFFFF;
+    display: grid;
+    grid-column-gap: 3.125em;
+    grid-gap: 0.313em;
+    grid-row-gap: 0.625em;
+/*12 columns to fit screen-size larger than 900px*/    grid-template-areas:
+      "navigation navigation navigation navigation navigation navigation navigation navigation navigation navigation navigation navigation"
+      "quote quote quote quote quote quote quote quote quote quote quote quote"
+        "text text text text text text text text text text text text"
+      "footer footer footer footer footer footer footer footer footer footer footer footer";
+    height: 100%;
+    max-width: 5120px;
+    grid-template-columns: repeat(12,1fr);
+    width: 100%;
+}
+}
+
+/*placement of each container*/
+.container9{
+    grid-area: navigation;
+}
+.container10{
+    grid-area: quote;
+}
+.container11{
+    grid-area: text;
+}
+.container12{
+    grid-area: footer;
+}
+
+/*containers in the grid*/
+.grid3 > .container9{
+    background-color: #FFFFFF;
+}
+.grid3 > .container10{
+    background-color: #FFFFFF;
+    grid-template-columns: 50%;
+    grid-template-rows: 100%;
+    padding: 1.313em;
+    text-align: left;
+}
+.grid3 > .container11{
+    background-color: #FFFFFF;
+    grid-template-columns: 50%;
+    padding: 1.313em 5em;
+}
+.grid3 > .container12{
+    text-align: center;
+}
+/*--end styling grid "solution" page--*/
+
+
+
+/*--start styling grid "sources" page--*/
+/*standard pcscreen 768px*/
+@media screen and (min-width: 1180px){
+.grid4{
+    background-color: #FFFFFF;
+    display: grid;
+/*12 columns to fit screen-size larger than 900px*/    grid-template-areas:
+      "navigation navigation navigation navigation "
+      "sources sources sources sources"
+      "footer footer footer footer";
+    height: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    /*grid-template-columns: repeat(4fr, 25%);
+    grid-template-columns: minmax(4fr);*/
+    width: 100%;
+    
+    /*grid-template-columns: repeat(auto-fit, minmax( 100px. 1fr));
+    grid-template-rows: repeat(auto-fit, 100px);*/
+}
+}
+
+/*placement of each container*/
+.container13{
+    grid-area: navigation;
+}
+.container14{
+    grid-area: sources;
+}
+
+.container15{
+    grid-area: footer;
+}
+
+/*containers in the grid*/
+.grid4 > .container13{
+    background-color: #FFFFFF;
+}
+.grid4 > .container14{
+    background-color: #FFFFFF;
+    overflow: hidden;
+    padding: 1.313em 5em;
+    text-align: left;
+}
+.container14 ul{
+    padding-left: 0em;
+}
+.inside {
+    display: grid;
+    padding: 0em;
+    margin: 0em 10em 0em 0em;
+    width: 100%;
+}
+.inside li{
+    display: list-item;
+    width: 100%;
+}
+.insideinside {
+    display: grid;
+    margin: 0em 10em 0em 0em;
+    padding: 0em;
+    width: 100%;
+}
+.insideinside li{
+    display: list-item;
+    width: 100%;
+}
+@media (max-width: 960px) and (min-width: 501px){
+    .inside li { width: 50%; }
+}
+
+@media (max-width: 500px) {
+    .inside li { width: 100%; }
+}
+@media (max-width: 960px) and (min-width: 501px){
+    .insideinside li { width: 50%; }
+}
+
+@media (max-width: 500px) {
+    .insideinside li { width: 100%; }
+}
+.grid4 > .container15{
+    background-color: #FFFFFF;
+    grid-template-columns: 50%;
+}
+/*--end styling grid "sources" page--*/
+
+
+
+/*--start styling grid "about us" page--*/
+/*standard pcscreen 768px*/
+@media screen and (min-width: 1180px){
+.grid5{
+    background-color: #FFFFFF;
+    display: grid;
+    grid-column-gap: 3.125em;
+    grid-gap: 0.313em;
+    grid-row-gap: 0.625em;
+/*12 columns to fit screen-size larger than 900px*/    grid-template-areas:
+      "navigation navigation navigation navigation navigation navigation navigation navigation navigation navigation navigation navigation"
+      "main main main main main main main main main main main main "
+      "footer footer footer footer footer footer footer footer footer footer footer footer";
+    height: 100%;
+    max-width: 5120px;
+    grid-template-columns: repeat(12,1fr);
+    width: 100%;
+}
+}
+
+/*placement of each container*/
+.container16{
+    grid-area: navigation;
+}
+.container17{
+    grid-area: main;
+}
+
+.container18{
+    grid-area: footer;
+}
+
+/*containers in the grid*/
+.grid5 > .container16{
+    background-color: #FFFFFF;
+}
+.grid5 > .container17{
+    background-color: #FFFFFF;
+    grid-template-columns: 50%;
+    grid-template-rows: 100%;
+    padding: 1.313em 5em;
+    text-align: left;
+}
+.grid5 > .container18{
+    background-color: #FFFFFF;
+    grid-template-columns: 50%;
+}
+/*--end styling grid "about" page--*/
+
+
+
+/*--start styling grid "q&a" page--*/
+/*standard pcscreen 768px*/
+@media screen and (min-width: 1180px){
+.grid6{
+    background-color: #FFFFFF;
+    display: grid;
+    grid-column-gap: 3.125em;
+    grid-gap: 0.313em;
+    grid-row-gap: 0.625em;
+/*12 columns to fit screen-size larger than 900px*/    grid-template-areas:
+      "navigation navigation navigation navigation navigation navigation navigation navigation navigation navigation navigation navigation"
+      "main main main main main main main main main main main main "
+      "footer footer footer footer footer footer footer footer footer footer footer footer";
+    height: 100%;
+    max-width: 5120px;
+    grid-template-columns: repeat(12,1fr);
+    width: 100%;
+}
+}
+
+/*placement of each container*/
+.container19{
+    grid-area: navigation;
+}
+.container20{
+    grid-area: main;
+}
+
+.container21{
+    grid-area: footer;
+}
+
+/*containers in the grid*/
+.grid6 > .container19{
+    background-color: #FFFFFF;
+}
+.grid6 > .container20{
+    background-color: #FFFFFF;
+    grid-template-columns: 50%;
+    grid-template-rows: 100%;
+    padding: 1.313em 5em;
+    text-align: left;
+}
+.grid6 > .container21{
+    background-color: #FFFFFF;
+    grid-template-columns: 50%;   
+}
+/*--end styling grid "Q&A" page--*/
+
+
+
+/*--start styling grid "prototype" page--*/
+/*standard pcscreen 768px*/
+@media screen and (min-width: 1180px){
+.grid7{
+    background-color: #FFFFFF;
+    display: grid;
+    grid-column-gap: 3.125em;
+    grid-gap: 0.313em;
+    grid-row-gap: 0.625em;
+/*12 columns to fit screen-size larger than 900px*/    grid-template-areas:
+    'navigation navigation navigation navigation navigation navigation navigation navigation navigation navigation navigation navigation'
+    'main main main main main main main main main main main main'
+    'picture1 picture1 picture1 picture1 picture1 picture1 picture1 picture1 picture1 picture1 picture1 picture1'
+    'picture2 picture2 picture2 picture2 picture2 picture2 picture2 picture2 picture2 picture2 picture2 picture2'
+    'footer footer footer footer footer footer footer footer footer footer footer footer';
+    height: 100%;
+    max-width: 5120px;
+    grid-template-columns: repeat(12,1fr);
+    width: 100%;
+}
+}
+
+/*placement of each container*/
+.container22{
+    grid-area: navigation;
+}
+.container23{
+    grid-area: main;
+}
+.container24{
+    grid-area: picture1;
+}
+.container25{
+    grid-area: picture2;
+}
+.container26{
+    grid-area: footer;
+}
+
+/*containers in the grid*/
+.grid7 > .container22{
+    background-color: #FFFFFF;
+}
+.grid7 > .container23{
+    background-color: #FFFFFF;
+    padding: 1.313em 5em;
+    text-align: left;
+}
+.grid7 > .container24{
+    background-color: #FFFFFF;
+    grid-template-columns: 50%;
+    grid-template-rows: 100%;
+    padding: 1.313em;
+    height: 100%;  
+}
+.grid7 > .container25{
+    background-color: #FFFFFF;
+    grid-template-columns: 50%;
+    grid-template-rows: 100%;
+    padding: 1.313em;
+    height: 100%;
+}
+.grid7 > .container26{
+    background-color: #FFFFFF;
+    grid-template-columns: 50%;   
+}
+/*--end styling grid "prototype" page--*/
+
+
+
+/*--start responsive image in problem and solution page--*/
+.responsiveimage{
+    display: block;
+    height: auto;
+    margin-bottom: 1em;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1em;
+    width: 80%;
+}
+/*--end responsive image in problem and solution page--*/
+
+
+
+/*start styling text*/
+.headline1{
+    line-height: 1.9em;
+    margin-bottom: 2em;
+    margin-top: 2em;
+}
+
+.text1{
+    display: inline-block;
+    line-height: 1.9em;
+}
+
+.headline2{
+    line-height: 1.9em;
+    margin-bottom: 2em;
+}
+
+.text2{
+    display: inline-block;
+    line-height: 1.9em;
+    margin-bottom: 2em;
+}
+
+.headline3{
+    line-height: 1.9em;
+    margin-bottom: 1em;
+    margin-top: 1em;
+}
+
+.text3{
+    display: inline-block;
+    line-height: 1.9em;
+    margin-bottom: 1em;
+}
+
+.text4{
+    display: inline-block;
+    line-height: 1.9em;
+    margin-bottom: 4em;
+}
+/*end styling text*/
+
+
+
+/*--start responsive image in prototype page--*/
+.responsiveimage2{
+    display: block;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+}
+
+.responsiveimage3{
+    display: block;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1em;
+    width: 80%;
+}
+/*--end responsive image in prototype page*--/
+
+
